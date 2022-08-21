@@ -866,7 +866,7 @@ progress::-webkit-progress-bar {
       </div>
     </main>
   <script>  /* SCRIPT */
-  
+
   const dice20 = () => {
   let x = parseInt(document.getElementById('d20').value)
   d20(x)
@@ -969,8 +969,6 @@ const openZ = () => {
   }
 }
 
-localStorage
-
 sessionStorage.e = 0
 const openE = () => {
   var e = document.getElementById('Eris')
@@ -1070,53 +1068,78 @@ const openN = () => {
 }
 
 function atuliza(){
-  document.getElementById('vidaB').value = localStorage.vidaB
-  document.getElementById('labelVB').innerHTML = `${localStorage.vidaB}/50`
+  if(localStorage.vidaB != undefined){
+    document.getElementById('vidaB').value = localStorage.vidaB
+    document.getElementById('labelVB').innerHTML = `${localStorage.vidaB}/50`
+  }
+  else if(localStorage.vidaC != undefined){
+    document.getElementById('vidaC').value = localStorage.vidaC
+    document.getElementById('labelVC').innerHTML = `${localStorage.vidaC}/33`
+  }
 
-  document.getElementById('vidaC').value = localStorage.vidaC
-  document.getElementById('labelVC').innerHTML = `${localStorage.vidaC}/33`
+  else if(localStorage.vidaE != undefined){
+    document.getElementById('vidaE').value = localStorage.vidaE
+    document.getElementById('labelVE').innerHTML = `${localStorage.vidaE}/46`
+  }
 
-  document.getElementById('vidaE').value = localStorage.vidaE
-  document.getElementById('labelVE').innerHTML = `${localStorage.vidaE}/46`
-
-  document.getElementById('vidaF').value = localStorage.vidaF
-  document.getElementById('labelVF').innerHTML = `${localStorage.vidaF}/33`
-
-  document.getElementById('vidaL').value = localStorage.vidaL
-  document.getElementById('labelVL').innerHTML = `${localStorage.vidaL}/50`
-
-  document.getElementById('vidaM').value = localStorage.vidaM
-  document.getElementById('labelVM').innerHTML = `${localStorage.vidaM}/46`
-
-  document.getElementById('vidaN').value = localStorage.vidaN
-  document.getElementById('labelVN').innerHTML = `${localStorage.vidaN}/43`
-
-  document.getElementById('vidaZ').value = localStorage.vidaZ
-  document.getElementById('labelVZ').innerHTML = `${localStorage.vidaZ}/64`
+  else if(localStorage.vidaF != undefined){
+    document.getElementById('vidaF').value = localStorage.vidaF
+    document.getElementById('labelVF').innerHTML = `${localStorage.vidaF}/33`
+  }
+  
+  else if(localStorage.vidaL != undefined){
+    document.getElementById('vidaL').value = localStorage.vidaL
+    document.getElementById('labelVL').innerHTML = `${localStorage.vidaL}/50`
+  }
+  else if(localStorage.vidaM != undefined){
+    document.getElementById('vidaM').value = localStorage.vidaM
+    document.getElementById('labelVM').innerHTML = `${localStorage.vidaM}/46`
+  }
+  else if(localStorage.vidaN != undefined){
+    document.getElementById('vidaN').value = localStorage.vidaN
+    document.getElementById('labelVN').innerHTML = `${localStorage.vidaN}/43`
+  }
+  else if(localStorage.vidaZ != undefined){
+    document.getElementById('vidaZ').value = localStorage.vidaZ
+    document.getElementById('labelVZ').innerHTML = `${localStorage.vidaZ}/64`
+  }
 /*  ##########################################################################       */
+else if(localStorage.sanidadeB != undefined){
   document.getElementById('sanidadeB').value = localStorage.sanidadeB
   document.getElementById('labelSB').innerHTML = `${localStorage.sanidadeB}/20`
+}
+  else if(localStorage.sanidadeC != undefined){
+    document.getElementById('sanidadeC').value = localStorage.sanidadeC
+    document.getElementById('labelSC').innerHTML = `${localStorage.sanidadeC}/20`
+  }
+  else if(localStorage.sanidadeE != undefined){
+    document.getElementById('sanidadeE').value = localStorage.sanidadeE
+    document.getElementById('labelSE').innerHTML = `${localStorage.sanidadeE}/20`
+  }
+  else if(localStorage.sanidadeF != undefined){
+    document.getElementById('sanidadeF').value = localStorage.sanidadeF
+    document.getElementById('labelSF').innerHTML = `${localStorage.sanidadeF}/20`
 
-  document.getElementById('sanidadeC').value = localStorage.sanidadeC
-  document.getElementById('labelSC').innerHTML = `${localStorage.sanidadeC}/20`
+  }
+  else if(localStorage.sanidadeL != undefined){
+    document.getElementById('sanidadeL').value = localStorage.sanidadeL
+    document.getElementById('labelSL').innerHTML = `${localStorage.sanidadeL}/20`
 
-  document.getElementById('sanidadeE').value = localStorage.sanidadeE
-  document.getElementById('labelSE').innerHTML = `${localStorage.sanidadeE}/20`
+  }
+  else if(localStorage.sanidadeM != undefined){
+    document.getElementById('sanidadeM').value = localStorage.sanidadeM
+    document.getElementById('labelSM').innerHTML = `${localStorage.sanidadeM}/20`
 
-  document.getElementById('sanidadeF').value = localStorage.sanidadeF
-  document.getElementById('labelSF').innerHTML = `${localStorage.sanidadeF}/20`
+  }
+  else if(localStorage.sanidadeN != undefined){
+    document.getElementById('sanidadeN').value = localStorage.sanidadeN
+    document.getElementById('labelSN').innerHTML = `${localStorage.sanidadeN}/20`
+  }
+  else if(localStorage.sanidadeZ != undefined){
+    document.getElementById('sanidadeZ').value = localStorage.sanidadeZ
+    document.getElementById('labelSZ').innerHTML = `${localStorage.sanidadeZ}/20`
 
-  document.getElementById('sanidadeL').value = localStorage.sanidadeL
-  document.getElementById('labelSL').innerHTML = `${localStorage.sanidadeL}/20`
-
-  document.getElementById('sanidadeM').value = localStorage.sanidadeM
-  document.getElementById('labelSM').innerHTML = `${localStorage.sanidadeM}/20`
-
-  document.getElementById('sanidadeN').value = localStorage.sanidadeN
-  document.getElementById('labelSN').innerHTML = `${localStorage.sanidadeN}/20`
-
-  document.getElementById('sanidadeZ').value = localStorage.sanidadeZ
-  document.getElementById('labelSZ').innerHTML = `${localStorage.sanidadeZ}/20`
+  }
 }
 atuliza()
 
