@@ -1,185 +1,29 @@
-<html lang="pt">
+<!DOCTYPE html>
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="shortcut icon"
       href="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/344/external-rpg-gaming-ecommerce-flaticons-lineal-color-flat-icons-2.png"
       type="image/x-icon"
     />
-    <style>
-
-.infos {
-  display: flex;
-  flex-direction: column;
-  height: 0;
-  width: 0;
-  overflow-x: hidden;
-  gap: 20px;
-  transition: 10s;
-}
-
-
-.avatar {
-  width: 1rem;
-}
-
-
-.header {
-  text-align: center;
-  font-size: 3.5rem;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-.dice {
-  font-size: 1.5rem;
-}
-
-.stats {
-  margin-left: 10%;
-}
-
-.skill {
-  display: grid;
-  grid-template-columns: repeat(2, 10rem);
-  border-radius: 1rem;
-  padding-left: 0.7rem;
-  overflow-x: hidden;
-  width: min-content;
-}
-
-.step {
-  background-color: #26092e;
-  height: 0.1rem;
-  box-shadow: 1px 1px 2px #1e112b, -1px -1px 2px #5c3583;
-}
-
-.dices {
-  display: grid;
-  grid-template-columns: repeat(2, 5.6rem);
-}
-
-.dice {
-  width: 7rem;
-  height: 3rem;
-  border-color: #5e267e;
-  border-style: outset;
-  border-width: 0.1rem;
-  border-radius: 0.6rem;
-  box-shadow: 6px 6px 12px #26092e, -6px -6px 12px #9825b8;
-}
-
-h3 {
-  flex-wrap: wrap;
-}
-
-.slot {
-  padding: 1rem;
-  border-radius: 50px;
-  border-radius: 50px;
-  background: linear-gradient(145deg, #e9e1e1, #c4bdbd);
-  box-shadow: 9px 9px 18px #746f6f, -9px -9px 18px #ffffff;
-}
-
-span {
-  font-size: 0.9rem;
-}
-
-.name {
-  font-size: 2rem;
-}
-
-.name1 {
-  display: flex;
-  justify-content: space-between;
-}
-
-button {
-  font-size: 1.5rem;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  overflow: hidden;
-  outline: none;
-  border: none;
-}
-
-.danoB, .curaB, .sanidadeB, .felicidadeB{
-  background-color: #ffffff86;
-  border-radius: 5px;
-}
-
-.danoB{
-  color: red;
-}
-
-.curaB{
-  color: green;
-}
-
-.sanidadeB{
-  color: grey;
-}
-
-.button:hover {
-  cursor: pointer;
-}
-
-.vida{
-  gap: 20px;
-}
-
-.input{
-  padding: 2px;
-  width: 3rem;
-  border-radius: 10px;
-}
-
-progress {
-  border-radius: 7px; 
-  width: 30%;
-  height: 1.5rem;
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.586);
-}
-progress::-webkit-progress-bar {
-  background-color: rgb(214, 205, 205);
-  border-radius: 7px;
-}
-
-.vida::-webkit-progress-value {
-  background-color: rgb(0, 245, 61);
-  border-radius: 7px;
-}
-
-.sanidade::-webkit-progress-value {
-  background-color: rgba(69, 172, 95, 0.641);
-  border-radius: 7px;
-}
-
-.b{
-  font-size: 20px;
-}
-
-.playerStats{
-  display: grid;
-  grid-template-columns: repeat(2, 10rem);
-}
-
-
-    </style>
-    <title>RPG</title>
+    <title>R P G</title>
   </head>
   <body>
-    <main class="main">
-      <div>
-        <h1 class="Header">Personagens</h1>
-      </div>
-      <div class="tabs">
-        <div class="slot"> <!-- BARTOLOMEU -->
-          <div class="name1">
-            <h1 class="name">Bartolomeu</h1>
-            <button onclick="openB()" class="button">➕</button>
-          </div>
+    <main>
+      <div class="header">Personagens</div>
+      <button class="collapsible">Bartolomeu</button>
+      <!-- BARTOLOMEU -->
+      <div class="content">
+        <div class="slot">
+          <!-- BARTOLOMEU -->
           <div class="infos" id="Bartolomeu">
             <div class="stats">
               <div class="playerStats" onclick="d20(5)">
@@ -209,10 +53,14 @@ progress::-webkit-progress-bar {
             </div>
             <div class="step">‎</div>
             <div class="vida">
-
               <div class="a">
                 <label for="vidaB" class="b">Vida:</label>
-                <progress id="vidaB" class="vida" value="50" max="50"></progress>
+                <progress
+                  id="vidaB"
+                  class="vida"
+                  value="50"
+                  max="50"
+                ></progress>
                 <label for="vidaB" id="labelVB">50/50</label>
               </div>
 
@@ -220,20 +68,24 @@ progress::-webkit-progress-bar {
 
               <div class="a">
                 <label for="sanidadeB" class="b">Sanidade:</label>
-                <progress id="sanidadeB" class="sanidade" value="20" max="20"></progress>
+                <progress
+                  id="sanidadeB"
+                  class="sanidade"
+                  value="20"
+                  max="20"
+                ></progress>
                 <label for="sanidadeB" id="labelSB">20/20</label>
               </div>
 
               <span>‎</span>
 
               <div class="button">
-                <input type="number" class="input" id="valueB"> <br>
+                <input type="number" class="input" id="valueB" /> <br />
                 <button class="danoB" onclick="danoB()">🩸</button>
                 <button class="curaB" onclick="healB()">💊</button>
                 <button class="sanidadeB" onclick="sanidadeB()">💀</button>
                 <button class="sanidadeB" onclick="felicidadeB()">😁</button>
               </div>
-            
             </div>
             <div class="step">‎</div>
             <div class="skill">
@@ -254,24 +106,24 @@ progress::-webkit-progress-bar {
             </div>
           </div>
         </div>
-        <span>‎</span>
-        <div class="slot"> <!-- CIARA -->
-          <div class="name1">
-            <h1 class="name">Ciara</h1>
-            <button onclick="openC()" class="button">➕</button>
-          </div>
+      </div>
+
+      <button class="collapsible">Ciara</button>
+      <div class="content">
+        <!-- CIARA -->
+        <div class="slot">
           <div class="infos" id="Ciara">
             <div class="stats">
               <div class="playerStats" onclick="d20(2)">
                 <h2>Força:</h2>
                 <h2>1</h2>
               </div>
-              <div class="playerStats" onclick="d20(3)" >
+              <div class="playerStats" onclick="d20(3)">
                 <h2>Destreza:</h2>
                 <h2>2</h2>
               </div>
               <div class="playerStats" onclick="d20(3)">
-                <h2 >Constituição:</h2>
+                <h2>Constituição:</h2>
                 <h2>2</h2>
               </div>
               <div class="playerStats" onclick="d20(4)">
@@ -289,10 +141,14 @@ progress::-webkit-progress-bar {
             </div>
             <div class="step">‎</div>
             <div class="vida">
-
               <div class="a">
                 <label for="vidaC" class="b">Vida:</label>
-                <progress id="vidaC" class="vida" value="33" max="33"></progress>
+                <progress
+                  id="vidaC"
+                  class="vida"
+                  value="33"
+                  max="33"
+                ></progress>
                 <label for="vidaC" id="labelVC">33/33</label>
               </div>
 
@@ -300,20 +156,24 @@ progress::-webkit-progress-bar {
 
               <div class="a">
                 <label for="sanidadeC" class="b">Sanidade:</label>
-                <progress id="sanidadeC" class="sanidade" value="20" max="20"></progress>
+                <progress
+                  id="sanidadeC"
+                  class="sanidade"
+                  value="20"
+                  max="20"
+                ></progress>
                 <label for="sanidadeC" id="labelSC">20/20</label>
               </div>
 
               <span>‎</span>
 
               <div class="button">
-                <input type="number" class="input" id="valueC"> <br>
+                <input type="number" class="input" id="valueC" /> <br />
                 <button class="danoB" onclick="danoC()">🩸</button>
                 <button class="curaB" onclick="healC()">💊</button>
                 <button class="sanidadeB" onclick="sanidadeC()">💀</button>
                 <button class="sanidadeB" onclick="felicidadeC()">😁</button>
               </div>
-            
             </div>
             <div class="step">‎</div>
             <div class="skill">
@@ -321,7 +181,7 @@ progress::-webkit-progress-bar {
               <p onclick="d6(1)">5 D6 +2</p>
               <h2>Passiva:</h2>
               <p>
-                Tatuagem armazena poder após abates <br />
+                Tatuagem armazena poder após abates
                 4 Cargas = +1 dado
               </p>
               <h2>Cura:</h2>
@@ -336,12 +196,12 @@ progress::-webkit-progress-bar {
             </div>
           </div>
         </div>
-        <span>‎</span>
-        <div class="slot"> <!-- ERIS -->
-          <div class="name1">
-            <h1 class="name">Eris</h1> 
-            <button onclick="openE()" class="button">➕</button>
-          </div>
+      </div>
+
+      <button class="collapsible">Eris</button>
+      <div class="content">
+        <!-- ERIS -->
+        <div class="slot">
           <div class="infos" id="Eris">
             <div class="stats">
               <div class="playerStats" onclick="d20(5)">
@@ -371,31 +231,39 @@ progress::-webkit-progress-bar {
             </div>
             <div class="step">‎</div>
             <div class="vida">
-
               <div class="a">
                 <label for="vidaE" class="b">Vida:</label>
-                <progress id="vidaE" class="vida" value="50" max="50"></progress>
-                <label for="vidaE" id="labelVE">50/50</label>
+                <progress
+                  id="vidaE"
+                  class="vida"
+                  value="46"
+                  max="46"
+                ></progress>
+                <label for="vidaE" id="labelVE">46/46</label>
               </div>
 
               <span>‎</span>
 
               <div class="a">
                 <label for="sanidadeE" class="b">Sanidade:</label>
-                <progress id="sanidadeE" class="sanidade" value="20" max="20"></progress>
+                <progress
+                  id="sanidadeE"
+                  class="sanidade"
+                  value="20"
+                  max="20"
+                ></progress>
                 <label for="sanidadeE" id="labelSE">20/20</label>
               </div>
 
               <span>‎</span>
 
               <div class="button">
-                <input type="number" class="input" id="valueE"> <br>
+                <input type="number" class="input" id="valueE" /> <br />
                 <button class="danoB" onclick="danoE()">🩸</button>
                 <button class="curaB" onclick="healE()">💊</button>
                 <button class="sanidadeB" onclick="sanidadeE()">💀</button>
                 <button class="sanidadeB" onclick="felicidadeE()">😁</button>
               </div>
-            
             </div>
             <div class="step">‎</div>
             <div class="skill">
@@ -406,9 +274,7 @@ progress::-webkit-progress-bar {
               <h2>Teletransporte das Sombras:</h2>
               <p class="attack">Teletransporta né</p>
               <h2>Elementarista:</h2>
-              <p class="attack" onclick="d6(6)">
-                Buffa a arma 🗡️
-              </p>
+              <p class="attack" onclick="d6(6)">Buffa a arma 🗡️</p>
               <h2>Elementos:</h2>
               <p>
                 Fogo: 1d4 de queimadura <br />
@@ -420,12 +286,12 @@ progress::-webkit-progress-bar {
             </div>
           </div>
         </div>
-        <span>‎</span>
-        <div class="slot"> <!-- FEATHER -->
-          <div class="name1">
-            <h1 class="name">Feather</h1>
-            <button onclick="openF()" class="button">➕</button>
-          </div>
+      </div>
+
+      <button class="collapsible">Feather</button>
+      <div class="content">
+        <!-- FEATHER -->
+        <div class="slot">
           <div class="infos" id="Feather">
             <div class="stats">
               <div class="playerStats" onclick="d20(5)">
@@ -455,10 +321,14 @@ progress::-webkit-progress-bar {
             </div>
             <div class="step">‎</div>
             <div class="vida">
-
               <div class="a">
                 <label for="vidaF" class="b">Vida:</label>
-                <progress id="vidaF" class="vida" value="33" max="33"></progress>
+                <progress
+                  id="vidaF"
+                  class="vida"
+                  value="33"
+                  max="33"
+                ></progress>
                 <label for="vidaF" id="labelVF">33/33</label>
               </div>
 
@@ -466,20 +336,24 @@ progress::-webkit-progress-bar {
 
               <div class="a">
                 <label for="sanidadeF" class="b">Sanidade:</label>
-                <progress id="sanidadeF" class="sanidade" value="20" max="20"></progress>
+                <progress
+                  id="sanidadeF"
+                  class="sanidade"
+                  value="20"
+                  max="20"
+                ></progress>
                 <label for="sanidadeF" id="labelSF">20/20</label>
               </div>
 
               <span>‎</span>
 
               <div class="button">
-                <input type="number" class="input" id="valueF"> <br>
+                <input type="number" class="input" id="valueF" /> <br />
                 <button class="danoB" onclick="danoF()">🩸</button>
                 <button class="curaB" onclick="healF()">💊</button>
                 <button class="sanidadeB" onclick="sanidadeF()">💀</button>
                 <button class="sanidadeB" onclick="felicidadeF()">😁</button>
               </div>
-            
             </div>
             <div class="step">‎</div>
             <div class="skill">
@@ -503,12 +377,12 @@ progress::-webkit-progress-bar {
             </div>
           </div>
         </div>
-        <span>‎</span>
-        <div class="slot"> <!-- LILITH -->
-          <div class="name1">
-            <h1 class="name">Lilith</h1>
-            <button onclick="openL()" class="button">➕</button>
-          </div>
+      </div>
+
+      <button class="collapsible">Lilith</button>
+      <div class="content">
+        <!-- Lilith -->
+        <div class="slot">
           <div class="infos" id="Lilith">
             <div class="stats">
               <div class="playerStats" onclick="d20(2)">
@@ -538,10 +412,14 @@ progress::-webkit-progress-bar {
             </div>
             <div class="step">‎</div>
             <div class="vida">
-
               <div class="a">
                 <label for="vidaL" class="b">Vida:</label>
-                <progress id="vidaL" class="vida" value="30" max="50"></progress>
+                <progress
+                  id="vidaL"
+                  class="vida"
+                  value="30"
+                  max="50"
+                ></progress>
                 <label for="vidaL" id="labelVL">50/50</label>
               </div>
 
@@ -549,20 +427,24 @@ progress::-webkit-progress-bar {
 
               <div class="a">
                 <label for="sanidadeL" class="b">Sanidade:</label>
-                <progress id="sanidadeL" class="sanidade" value="20" max="20"></progress>
+                <progress
+                  id="sanidadeL"
+                  class="sanidade"
+                  value="20"
+                  max="20"
+                ></progress>
                 <label for="sanidadeL" id="labelSL">20/20</label>
               </div>
 
               <span>‎</span>
 
               <div class="button">
-                <input type="number" class="input" id="valueL"> <br>
+                <input type="number" class="input" id="valueL" /> <br />
                 <button class="danoB" onclick="danoL()">🩸</button>
                 <button class="curaB" onclick="healL()">💊</button>
                 <button class="sanidadeB" onclick="sanidadeL()">💀</button>
                 <button class="sanidadeB" onclick="felicidadeL()">😁</button>
               </div>
-            
             </div>
             <div class="step">‎</div>
             <div class="skill">
@@ -582,94 +464,94 @@ progress::-webkit-progress-bar {
             </div>
           </div>
         </div>
-        <span>‎</span>
-        <div class="slot"> <!-- MINA -->
-          <div class="name1">
-            <h1 class="name">Mina</h1>
-            <button onclick="openM()" class="button">➕</button>
+      </div>
+
+      <button class="collapsible">Mina</button>
+      <div class="content">
+        <!-- MINA -->
+        <div class="slot">
+          <div class="stats">
+            <div class="playerStats" onclick="d20(4)">
+              <h2>Força:</h2>
+              <h2>3</h2>
+            </div>
+            <div class="playerStats" onclick="d20(4)">
+              <h2>Destreza:</h2>
+              <h2>3</h2>
+            </div>
+            <div class="playerStats" onclick="d20(4)">
+              <h2>Constituição:</h2>
+              <h2>3</h2>
+            </div>
+            <div class="playerStats" onclick="d20(2)">
+              <h2>Carisma:</h2>
+              <h2>1</h2>
+            </div>
+            <div class="playerStats" onclick="d20(3)">
+              <h2>Inteligência:</h2>
+              <h2>2</h2>
+            </div>
+            <div class="playerStats" onclick="d20(4)">
+              <h2>Percepção:</h2>
+              <h2>3</h2>
+            </div>
           </div>
-          <div class="infos" id="Mina">
-            <div class="stats">
-              <div class="playerStats" onclick="d20(4)">
-                <h2>Força:</h2>
-                <h2>3</h2>
-              </div>
-              <div class="playerStats" onclick="d20(4)">
-                <h2>Destreza:</h2>
-                <h2>3</h2>
-              </div>
-              <div class="playerStats" onclick="d20(4)">
-                <h2>Constituição:</h2>
-                <h2>3</h2>
-              </div>
-              <div class="playerStats" onclick="d20(2)">
-                <h2>Carisma:</h2>
-                <h2>1</h2>
-              </div>
-              <div class="playerStats" onclick="d20(3)">
-                <h2>Inteligência:</h2>
-                <h2>2</h2>
-              </div>
-              <div class="playerStats" onclick="d20(4)">
-                <h2>Percepção:</h2>
-                <h2>3</h2>
-              </div>
+          <div class="step">‎</div>
+          <div class="vida">
+            <div class="a">
+              <label for="vidaM" class="b">Vida:</label>
+              <progress id="vidaM" class="vida" value="46" max="46"></progress>
+              <label for="vidaM" id="labelVM">46/46</label>
             </div>
-            <div class="step">‎</div>
-            <div class="vida">
 
-              <div class="a">
-                <label for="vidaM" class="b">Vida:</label>
-                <progress id="vidaM" class="vida" value="46" max="46"></progress>
-                <label for="vidaM" id="labelVM">46/46</label>
-              </div>
+            <span>‎</span>
 
-              <span>‎</span>
-
-              <div class="a">
-                <label for="sanidadeM" class="b">Sanidade:</label>
-                <progress id="sanidadeM" class="sanidade" value="20" max="20"></progress>
-                <label for="sanidadeM" id="labelSM">20/20</label>
-              </div>
-
-              <span>‎</span>
-
-              <div class="button">
-                <input type="number" class="input" id="valueM"> <br>
-                <button class="danoB" onclick="danoM()">🩸</button>
-                <button class="curaB" onclick="healM()">💊</button>
-                <button class="sanidadeB" onclick="sanidadeM()">💀</button>
-                <button class="sanidadeB" onclick="felicidadeM()">😁</button>
-              </div>
-            
+            <div class="a">
+              <label for="sanidadeM" class="b">Sanidade:</label>
+              <progress
+                id="sanidadeM"
+                class="sanidade"
+                value="20"
+                max="20"
+              ></progress>
+              <label for="sanidadeM" id="labelSM">20/20</label>
             </div>
-            <div class="step">‎</div>
-            <div class="skill">
-              <h2>Ataque Básico:</h2>
-              <p></p>
-              <h2>Passiva:</h2>
-              <p>
-                Transforma em morcego🦇<br />
-                +5m
-              </p>
-              <h2>Mordida:</h2>
-              <p class="attack" onclick="d6(4)">
-                Moide <br /><span>4 D6 (100% de cura)</span>
-              </p>
-              <h2>Brilho:</h2>
-              <p class="attack" onclick="d6(5)">
-                Emite forte luz <br />
-                <span>retira aggro por 1 round</span>
-              </p>
+
+            <span>‎</span>
+
+            <div class="button">
+              <input type="number" class="input" id="valueM" /> <br />
+              <button class="danoB" onclick="danoM()">🩸</button>
+              <button class="curaB" onclick="healM()">💊</button>
+              <button class="sanidadeB" onclick="sanidadeM()">💀</button>
+              <button class="sanidadeB" onclick="felicidadeM()">😁</button>
             </div>
+          </div>
+          <div class="step">‎</div>
+          <div class="skill">
+            <h2>Ataque Básico:</h2>
+            <p></p>
+            <h2>Passiva:</h2>
+            <p>
+              Transforma em morcego🦇<br />
+              +5m
+            </p>
+            <h2>Mordida:</h2>
+            <p class="attack" onclick="d6(4)">
+              Moide <br /><span>4 D6 (100% de cura)</span>
+            </p>
+            <h2>Brilho:</h2>
+            <p class="attack" onclick="d6(5)">
+              Emite forte luz <br />
+              <span>retira aggro por 1 round</span>
+            </p>
           </div>
         </div>
-        <span>‎</span>
-        <div class="slot"> <!-- NÍXIS -->
-          <div class="name1">
-            <h1 class="name">Níxis</h1>
-            <button onclick="openN()" class="button">➕</button>
-          </div>
+      </div>
+      <button class="collapsible">Níxis</button>
+      <div class="content">
+        <!-- NíXIS -->
+        <div class="slot">
           <div class="infos" id="Nixis">
             <div class="stats">
               <div class="playerStats" onclick="d20(4)">
@@ -699,10 +581,14 @@ progress::-webkit-progress-bar {
             </div>
             <div class="step">‎</div>
             <div class="vida">
-
               <div class="a">
                 <label for="vidaN" class="b">Vida:</label>
-                <progress id="vidaN" class="vida" value="43" max="43"></progress>
+                <progress
+                  id="vidaN"
+                  class="vida"
+                  value="43"
+                  max="43"
+                ></progress>
                 <label for="vidaN" id="labelVN">50/50</label>
               </div>
 
@@ -710,20 +596,24 @@ progress::-webkit-progress-bar {
 
               <div class="a">
                 <label for="sanidadeN" class="b">Sanidade:</label>
-                <progress id="sanidadeN" class="sanidade" value="20" max="20"></progress>
+                <progress
+                  id="sanidadeN"
+                  class="sanidade"
+                  value="20"
+                  max="20"
+                ></progress>
                 <label for="sanidadeN" id="labelSN">20/20</label>
               </div>
 
               <span>‎</span>
 
               <div class="button">
-                <input type="number" class="input" id="valueN"> <br>
+                <input type="number" class="input" id="valueN" /> <br />
                 <button class="danoB" onclick="danoN()">🩸</button>
                 <button class="curaB" onclick="healN()">💊</button>
                 <button class="sanidadeB" onclick="sanidadeN()">💀</button>
                 <button class="sanidadeB" onclick="felicidadeN()">😁</button>
               </div>
-            
             </div>
             <div class="step">‎</div>
             <div class="skill">
@@ -743,12 +633,12 @@ progress::-webkit-progress-bar {
             </div>
           </div>
         </div>
-        <span>‎</span>
-        <div class="slot"> <!-- ZUMBÃO -->
-          <div class="name1">
-            <h1 class="name">Zumbão</h1>
-            <button onclick="openZ()" class="button">➕</button>
-          </div>
+      </div>
+
+      <button class="collapsible">Zumbão</button>
+      <div class="content">
+        <!-- Zumbão -->
+        <div class="slot">
           <div class="infos" id="Zumbão">
             <div class="stats">
               <div class="playerStats" onclick="d20(5)">
@@ -778,10 +668,14 @@ progress::-webkit-progress-bar {
             </div>
             <div class="step">‎</div>
             <div class="vida">
-
               <div class="a">
                 <label for="vidaZ" class="b">Vida:</label>
-                <progress id="vidaZ" class="vida" value="64" max="64"></progress>
+                <progress
+                  id="vidaZ"
+                  class="vida"
+                  value="64"
+                  max="64"
+                ></progress>
                 <label for="vidaZ" id="labelVZ">64/64</label>
               </div>
 
@@ -789,20 +683,24 @@ progress::-webkit-progress-bar {
 
               <div class="a">
                 <label for="sanidadeZ" class="b">Sanidade:</label>
-                <progress id="sanidadeZ" class="sanidade" value="20" max="20"></progress>
+                <progress
+                  id="sanidadeZ"
+                  class="sanidade"
+                  value="20"
+                  max="20"
+                ></progress>
                 <label for="sanidadeZ" id="labelSZ">20/20</label>
               </div>
 
               <span>‎</span>
 
               <div class="button">
-                <input type="number" class="input" id="valueZ"> <br>
+                <input type="number" class="input" id="valueZ" /> <br />
                 <button class="danoB" onclick="danoZ()">🩸</button>
                 <button class="curaB" onclick="healZ()">💊</button>
                 <button class="sanidadeB" onclick="sanidadeZ()">💀</button>
                 <button class="sanidadeB" onclick="felicidadeZ()">😁</button>
               </div>
-            
             </div>
             <div class="step">‎</div>
             <div class="skill">
@@ -823,10 +721,10 @@ progress::-webkit-progress-bar {
           </div>
         </div>
       </div>
-      <div>
-        <h1 class="Header">Dados</h1>
-      </div>
-      <div class="dices"> <!-- DADOS -->
+
+      <div class="header">Dados</div>
+      <div class="dices">
+        <!-- DADOS -->
         <input
           type="number"
           id="d20"
@@ -835,7 +733,7 @@ progress::-webkit-progress-bar {
           min="1"
           max="20"
         />
-        <button onclick="dice20()">🎲</button>
+        <button onclick="dice20()" onkeyup="dice20()">🎲</button>
         <input
           type="number"
           id="d8"
@@ -843,7 +741,7 @@ progress::-webkit-progress-bar {
           placeholder="D8"
           min="1"
           max="20"
-        /> 
+        />
         <button onclick="dice8()">🎲</button>
         <input
           type="number"
@@ -865,902 +763,7 @@ progress::-webkit-progress-bar {
         <button onclick="dice4()">🎲</button>
       </div>
     </main>
-  <script>  /* SCRIPT */
 
-  const dice20 = () => {
-  let x = parseInt(document.getElementById('d20').value)
-  d20(x)
-  document.getElementById('d20').value = ''
-}
-
-const dice8 = () => {
-  let x = parseInt(document.getElementById('d8').value)
-  d8(x)
-  document.getElementById('d8').value = ''
-}
-
-const dice6 = () => {
-  let x = parseInt(document.getElementById('d6').value)
-  d6(x)
-  document.getElementById('d6').value = ''
-}
-
-const dice4 = () => {
-  let x = parseInt(document.getElementById('d4').value)
-  d4(x)
-  document.getElementById('d4').value = ''
-}
-
-const d20 = number => {
-  var arr = []
-  while (arr.length < number) {
-    var r = Math.floor(Math.random() * 20) + 1
-    arr.push(r)
-  }
-  alert(
-    `----🎲  ${arr.reduce((a, b) => a + b, 0)}  🎲----\n\n ${arr.sort(function (
-      a,
-      b
-    ) {
-      return b - a
-    })}`
-  )
-}
-
-const d8 = number => {
-  var arr = []
-  while (arr.length < number) {
-    var r = Math.floor(Math.random() * 8) + 1
-    arr.push(r)
-  }
-  alert(
-    `----🎲  ${arr.reduce((a, b) => a + b, 0)}  🎲----\n\n ${arr.sort(function (
-      a,
-      b
-    ) {
-      return b - a
-    })}`
-  )
-}
-
-const d6 = number => {
-  var arr = []
-  while (arr.length < number) {
-    var r = Math.floor(Math.random() * 6) + 1
-    arr.push(r)
-  }
-  alert(
-    `----🎲  ${arr.reduce((a, b) => a + b, 0)}  🎲----\n\n ${arr.sort(function (
-      a,
-      b
-    ) {
-      return b - a
-    })}`
-  )
-}
-
-const d4 = number => {
-  var arr = []
-  while (arr.length < number) {
-    var r = Math.floor(Math.random() * 4) + 1
-    arr.push(r)
-  }
-  alert(
-    `----🎲  ${arr.reduce((a, b) => a + b, 0)}  🎲----\n\n ${arr.sort(function (
-      a,
-      b
-    ) {
-      return b - a
-    })}`
-  )
-}
-
-sessionStorage.z = 0
-const openZ = () => {
-  var z = document.getElementById('Zumbão')
-  if (sessionStorage.z == 0) {
-    z.style.width = 'fit-content'
-    z.style.height = 'fit-content'
-    sessionStorage.z = 1
-  } else if (sessionStorage.z == 1) {
-    z.style.width = '0'
-    z.style.height = '0'
-    sessionStorage.z = 0
-  }
-}
-
-sessionStorage.e = 0
-const openE = () => {
-  var e = document.getElementById('Eris')
-  if (sessionStorage.e == 0) {
-    e.style.width = 'fit-content'
-    e.style.height = 'fit-content'
-    sessionStorage.e = 1
-  } else if (sessionStorage.e == 1) {
-    e.style.width = '0'
-    e.style.height = '0'
-    sessionStorage.e = 0
-  }
-}
-
-sessionStorage.l = 0
-const openL = () => {
-  var l = document.getElementById('Lilith')
-  if (sessionStorage.l == 0) {
-    l.style.width = 'fit-content'
-    l.style.height = 'fit-content'
-    sessionStorage.l = 1
-  } else if (sessionStorage.l == 1) {
-    l.style.width = '0'
-    l.style.height = '0'
-    sessionStorage.l = 0
-  }
-}
-
-sessionStorage.b = 0
-const openB = () => {
-  let b = document.getElementById('Bartolomeu')
-  if (sessionStorage.b == 0) {
-    b.style.width = 'fit-content'
-    b.style.height = 'fit-content'
-    sessionStorage.b = 1
-  } else if (sessionStorage.b == 1) {
-    b.style.width = '0'
-    b.style.height = '0'
-    sessionStorage.b = 0
-  }
-}
-
-sessionStorage.c = 0
-const openC = () => {
-  let b = document.getElementById('Ciara')
-  if (sessionStorage.b == 0) {
-    b.style.width = 'fit-content'
-    b.style.height = 'fit-content'
-    sessionStorage.b = 1
-  } else if (sessionStorage.b == 1) {
-    b.style.width = '0'
-    b.style.height = '0'
-    sessionStorage.b = 0
-  }
-}
-
-sessionStorage.f = 0
-const openF = () => {
-  let b = document.getElementById('Feather')
-  if (sessionStorage.b == 0) {
-    b.style.width = 'fit-content'
-    b.style.height = 'fit-content'
-    sessionStorage.b = 1
-  } else if (sessionStorage.b == 1) {
-    b.style.width = '0'
-    b.style.height = '0'
-    sessionStorage.b = 0
-  }
-}
-
-sessionStorage.m = 0
-const openM = () => {
-  let b = document.getElementById('Mina')
-  if (sessionStorage.b == 0) {
-    b.style.width = 'fit-content'
-    b.style.height = 'fit-content'
-    sessionStorage.b = 1
-  } else if (sessionStorage.b == 1) {
-    b.style.width = '0'
-    b.style.height = '0'
-    sessionStorage.b = 0
-  }
-}
-
-sessionStorage.n = 0
-const openN = () => {
-  let b = document.getElementById('Nixis')
-  if (sessionStorage.b == 0) {
-    b.style.width = 'fit-content'
-    b.style.height = 'fit-content'
-    sessionStorage.b = 1
-  } else if (sessionStorage.b == 1) {
-    b.style.width = '0'
-    b.style.height = '0'
-    sessionStorage.b = 0
-  }
-}
-
-function atuliza(){
-  if(localStorage.vidaB != undefined){
-    document.getElementById('vidaB').value = localStorage.vidaB
-    document.getElementById('labelVB').innerHTML = `${localStorage.vidaB}/50`
-  }
-  else if(localStorage.vidaC != undefined){
-    document.getElementById('vidaC').value = localStorage.vidaC
-    document.getElementById('labelVC').innerHTML = `${localStorage.vidaC}/33`
-  }
-
-  else if(localStorage.vidaE != undefined){
-    document.getElementById('vidaE').value = localStorage.vidaE
-    document.getElementById('labelVE').innerHTML = `${localStorage.vidaE}/46`
-  }
-
-  else if(localStorage.vidaF != undefined){
-    document.getElementById('vidaF').value = localStorage.vidaF
-    document.getElementById('labelVF').innerHTML = `${localStorage.vidaF}/33`
-  }
-  
-  else if(localStorage.vidaL != undefined){
-    document.getElementById('vidaL').value = localStorage.vidaL
-    document.getElementById('labelVL').innerHTML = `${localStorage.vidaL}/50`
-  }
-  else if(localStorage.vidaM != undefined){
-    document.getElementById('vidaM').value = localStorage.vidaM
-    document.getElementById('labelVM').innerHTML = `${localStorage.vidaM}/46`
-  }
-  else if(localStorage.vidaN != undefined){
-    document.getElementById('vidaN').value = localStorage.vidaN
-    document.getElementById('labelVN').innerHTML = `${localStorage.vidaN}/43`
-  }
-  else if(localStorage.vidaZ != undefined){
-    document.getElementById('vidaZ').value = localStorage.vidaZ
-    document.getElementById('labelVZ').innerHTML = `${localStorage.vidaZ}/64`
-  }
-/*  ##########################################################################       */
-else if(localStorage.sanidadeB != undefined){
-  document.getElementById('sanidadeB').value = localStorage.sanidadeB
-  document.getElementById('labelSB').innerHTML = `${localStorage.sanidadeB}/20`
-}
-  else if(localStorage.sanidadeC != undefined){
-    document.getElementById('sanidadeC').value = localStorage.sanidadeC
-    document.getElementById('labelSC').innerHTML = `${localStorage.sanidadeC}/20`
-  }
-  else if(localStorage.sanidadeE != undefined){
-    document.getElementById('sanidadeE').value = localStorage.sanidadeE
-    document.getElementById('labelSE').innerHTML = `${localStorage.sanidadeE}/20`
-  }
-  else if(localStorage.sanidadeF != undefined){
-    document.getElementById('sanidadeF').value = localStorage.sanidadeF
-    document.getElementById('labelSF').innerHTML = `${localStorage.sanidadeF}/20`
-
-  }
-  else if(localStorage.sanidadeL != undefined){
-    document.getElementById('sanidadeL').value = localStorage.sanidadeL
-    document.getElementById('labelSL').innerHTML = `${localStorage.sanidadeL}/20`
-
-  }
-  else if(localStorage.sanidadeM != undefined){
-    document.getElementById('sanidadeM').value = localStorage.sanidadeM
-    document.getElementById('labelSM').innerHTML = `${localStorage.sanidadeM}/20`
-
-  }
-  else if(localStorage.sanidadeN != undefined){
-    document.getElementById('sanidadeN').value = localStorage.sanidadeN
-    document.getElementById('labelSN').innerHTML = `${localStorage.sanidadeN}/20`
-  }
-  else if(localStorage.sanidadeZ != undefined){
-    document.getElementById('sanidadeZ').value = localStorage.sanidadeZ
-    document.getElementById('labelSZ').innerHTML = `${localStorage.sanidadeZ}/20`
-
-  }
-}
-atuliza()
-
-const danoL = () =>{
-  let x = localStorage.vidaL;
-  var y = document.getElementById('valueL').value;
-  if(localStorage.vidaL === undefined){
-    localStorage.vidaL = '50'
-  }
-  else if (y === ''){
-    return 0;
-  }
-
-  else if(x != undefined){
-    a = document.getElementById('valueL').value;
-    y = parseInt(a)
-    z = parseInt(localStorage.vidaL)
-    localStorage.vidaL = z - y
-  }
-  document.getElementById('vidaL').value = localStorage.vidaL
-  document.getElementById('labelVL').innerHTML = `${localStorage.vidaL}/50`
-}
-
-const healL = () =>{
-  let x = localStorage.vidaL;
-  var y = document.getElementById('valueL').value;
-  if(localStorage.vidaL === undefined){
-    localStorage.vidaL = '50'
-  }
-  else if (y === ''){
-    return 0;
-  }
-  else if(x != undefined){
-    a = document.getElementById('valueL').value;
-    y = parseInt(a)
-    z = parseInt(localStorage.vidaL)
-    localStorage.vidaL = z + y
-    document.getElementById('vidaL').value = localStorage.vidaL
-    document.getElementById('labelVL').innerHTML = `${localStorage.vidaL}/50`
-  }
-}
-
-const sanidadeL = () =>{
-  let x = localStorage.sanidadeL;
-  var y = document.getElementById('valueL').value;
-  if(localStorage.sanidadeL === undefined){
-    localStorage.sanidadeL = '20'
-  }
-  else if (y === ''){
-    return 0;
-  }
-  else if(x != undefined){
-    a = document.getElementById('valueL').value;
-    y = parseInt(a)
-    z = parseInt(localStorage.sanidadeL)
-    localStorage.sanidadeL = z - y
-  }
-  document.getElementById('sanidadeL').value = localStorage.sanidadeL
-  document.getElementById('labelSL').innerHTML = `${localStorage.sanidadeL}/20`
-}
-
-const felicidadeL = () =>{
-  let x = localStorage.sanidadeL;
-  var y = document.getElementById('valueL').value;
-  if(localStorage.sanidadeL === undefined){
-    localStorage.sanidadeL = '20'
-  }
-  else if (y === ''){
-    return 0;
-  }
-  else if(x != undefined){
-    a = document.getElementById('valueL').value;
-    y = parseInt(a)
-    z = parseInt(localStorage.sanidadeL)
-    localStorage.sanidadeL = z + y
-  }
-  document.getElementById('sanidadeL').value = localStorage.sanidadeL
-  document.getElementById('labelSL').innerHTML = `${localStorage.sanidadeL}/20`
-}
-
-/*                */
-
-const danoB = () =>{
-  let x = localStorage.vidaB;
-  var y = document.getElementById('valueB').value;
-  if(localStorage.vidaB === undefined){
-    localStorage.vidaB = '50'
-  }
-  else if (y === ''){
-    return 0;
-  }
-
-  else if(x != undefined){
-    a = document.getElementById('valueB').value;
-    y = parseInt(a)
-    z = parseInt(localStorage.vidaB)
-    localStorage.vidaB = z - y
-  }
-  document.getElementById('vidaB').value = localStorage.vidaB
-  document.getElementById('labelVB').innerHTML = `${localStorage.vidaB}/50`
-}
-
-const healB = () =>{
-  let x = localStorage.vidaB;
-  var y = document.getElementById('valueB').value;
-  if(localStorage.vidaB === undefined){
-    localStorage.vidaB = '50'
-  }
-  else if (y === ''){
-    return 0;
-  }
-  else if(x != undefined){
-    a = document.getElementById('valueB').value;
-    y = parseInt(a)
-    z = parseInt(localStorage.vidaB)
-    localStorage.vidaB = z + y
-    document.getElementById('vidaB').value = localStorage.vidaB
-    document.getElementById('labelVB').innerHTML = `${localStorage.vidaB}/50`
-  }
-}
-
-const sanidadeB = () =>{
-  let x = localStorage.sanidadeB;
-  var y = document.getElementById('valueB').value;
-  if(localStorage.sanidadeB === undefined){
-    localStorage.sanidadeB = '20'
-  }
-  else if (y === ''){
-    return 0;
-  }
-  else if(x != undefined){
-    a = document.getElementById('valueB').value;
-    y = parseInt(a)
-    z = parseInt(localStorage.sanidadeB)
-    localStorage.sanidadeB = z - y
-  }
-  document.getElementById('sanidadeB').value = localStorage.sanidadeB
-  document.getElementById('labelSB').innerHTML = `${localStorage.sanidadeB}/20`
-}
-
-const felicidadeB = () =>{
-  let x = localStorage.sanidadeB;
-  var y = document.getElementById('valueB').value;
-  if(localStorage.sanidadeB === undefined){
-    localStorage.sanidadeB = '20'
-  }
-  else if (y === ''){
-    return 0;
-  }
-  else if(x != undefined){
-    a = document.getElementById('valueB').value;
-    y = parseInt(a)
-    z = parseInt(localStorage.sanidadeB)
-    localStorage.sanidadeB = z + y
-  }
-  document.getElementById('sanidadeB').value = localStorage.sanidadeB
-  document.getElementById('labelSB').innerHTML = `${localStorage.sanidadeB}/20`
-}
-
-const danoC = () =>{
-  let x = localStorage.vidaC;
-  var y = document.getElementById('valueC').value;
-  if(localStorage.vidaC === undefined){
-    localStorage.vidaC = '33'
-  }
-  else if (y === ''){
-    return 0;
-  }
-
-  else if(x != undefined){
-    a = document.getElementById('valueC').value;
-    y = parseInt(a)
-    z = parseInt(localStorage.vidaC)
-    localStorage.vidaC = z - y
-  }
-  document.getElementById('vidaC').value = localStorage.vidaC
-  document.getElementById('labelVC').innerHTML = `${localStorage.vidaC}/33`
-}
-
-const healC = () =>{
-  let x = localStorage.vidaC;
-  var y = document.getElementById('valueC').value;
-  if(localStorage.vidaC === undefined){
-    localStorage.vidaC = '33'
-  }
-  else if (y === ''){
-    return 0;
-  }
-  else if(x != undefined){
-    a = document.getElementById('valueC').value;
-    y = parseInt(a)
-    z = parseInt(localStorage.vidaC)
-    localStorage.vidaC = z + y
-    document.getElementById('vidaC').value = localStorage.vidaC
-    document.getElementById('labelVC').innerHTML = `${localStorage.vidaC}/33`
-  }
-}
-
-const sanidadeC = () =>{
-  let x = localStorage.sanidadeC;
-  var y = document.getElementById('valueC').value;
-  if(localStorage.sanidadeC === undefined){
-    localStorage.sanidadeC = '20'
-  }
-  else if (y === ''){
-    return 0;
-  }
-  else if(x != undefined){
-    a = document.getElementById('valueC').value;
-    y = parseInt(a)
-    z = parseInt(localStorage.sanidadeC)
-    localStorage.sanidadeC = z - y
-  }
-  document.getElementById('sanidadeC').value = localStorage.sanidadeC
-  document.getElementById('labelSC').innerHTML = `${localStorage.sanidadeC}/20`
-}
-
-const felicidadeC = () =>{
-  let x = localStorage.sanidadeC;
-  var y = document.getElementById('valueC').value;
-  if(localStorage.sanidadeC === undefined){
-    localStorage.sanidadeC = '20'
-  }
-  else if (y === ''){
-    return 0;
-  }
-  else if(x != undefined){
-    a = document.getElementById('valueC').value;
-    y = parseInt(a)
-    z = parseInt(localStorage.sanidadeC)
-    localStorage.sanidadeC = z + y
-  }
-  document.getElementById('sanidadeC').value = localStorage.sanidadeC
-  document.getElementById('labelSC').innerHTML = `${localStorage.sanidadeC}/20`
-}
-
-const danoE = () =>{
-  let x = localStorage.vidaE;
-  var y = document.getElementById('valueE').value;
-  if(localStorage.vidaE === undefined){
-    localStorage.vidaE = '46'
-  }
-  else if (y === ''){
-    return 0;
-  }
-
-  else if(x != undefined){
-    a = document.getElementById('valueE').value;
-    y = parseInt(a)
-    z = parseInt(localStorage.vidaE)
-    localStorage.vidaE = z - y
-  }
-  document.getElementById('vidaE').value = localStorage.vidaE
-  document.getElementById('labelVE').innerHTML = `${localStorage.vidaE}/46`
-}
-
-const healE = () =>{
-  let x = localStorage.vidaE;
-  var y = document.getElementById('valueE').value;
-  if(localStorage.vidaE === undefined){
-    localStorage.vidaE = '46'
-  }
-  else if (y === ''){
-    return 0;
-  }
-  else if(x != undefined){
-    a = document.getElementById('valueE').value;
-    y = parseInt(a)
-    z = parseInt(localStorage.vidaE)
-    localStorage.vidaE = z + y
-    document.getElementById('vidaE').value = localStorage.vidaE
-    document.getElementById('labelVE').innerHTML = `${localStorage.vidaE}/46`
-  }
-}
-
-const sanidadeE = () =>{
-  let x = localStorage.sanidadeE;
-  var y = document.getElementById('valueE').value;
-  if(localStorage.sanidadeE === undefined){
-    localStorage.sanidadeE = '20'
-  }
-  else if (y === ''){
-    return 0;
-  }
-  else if(x != undefined){
-    a = document.getElementById('valueE').value;
-    y = parseInt(a)
-    z = parseInt(localStorage.sanidadeE)
-    localStorage.sanidadeE = z - y
-  }
-  document.getElementById('sanidadeE').value = localStorage.sanidadeE
-  document.getElementById('labelSE').innerHTML = `${localStorage.sanidadeE}/20`
-}
-
-const felicidadeE = () =>{
-  let x = localStorage.sanidadeE;
-  var y = document.getElementById('valueE').value;
-  if(localStorage.sanidadeE === undefined){
-    localStorage.sanidadeE = '20'
-  }
-  else if (y === ''){
-    return 0;
-  }
-  else if(x != undefined){
-    a = document.getElementById('valueE').value;
-    y = parseInt(a)
-    z = parseInt(localStorage.sanidadeE)
-    localStorage.sanidadeE = z + y
-  }
-  document.getElementById('sanidadeE').value = localStorage.sanidadeE
-  document.getElementById('labelSE').innerHTML = `${localStorage.sanidadeE}/20`
-}
-
-const danoF = () =>{
-  let x = localStorage.vidaF;
-  var y = document.getElementById('valueF').value;
-  if(localStorage.vidaF === undefined){
-    localStorage.vidaF = '33'
-  }
-  else if (y === ''){
-    return 0;
-  }
-
-  else if(x != undefined){
-    a = document.getElementById('valueF').value;
-    y = parseInt(a)
-    z = parseInt(localStorage.vidaF)
-    localStorage.vidaF = z - y
-  }
-  document.getElementById('vidaF').value = localStorage.vidaF
-  document.getElementById('labelVF').innerHTML = `${localStorage.vidaF}/33`
-}
-
-const healF = () =>{
-  let x = localStorage.vidaF;
-  var y = document.getElementById('valueF').value;
-  if(localStorage.vidaF === undefined){
-    localStorage.vidaF = '33'
-  }
-  else if (y === ''){
-    return 0;
-  }
-  else if(x != undefined){
-    a = document.getElementById('valueF').value;
-    y = parseInt(a)
-    z = parseInt(localStorage.vidaF)
-    localStorage.vidaF = z + y
-    document.getElementById('vidaF').value = localStorage.vidaF
-    document.getElementById('labelVF').innerHTML = `${localStorage.vidaF}/33`
-  }
-}
-
-const sanidadeF = () =>{
-  let x = localStorage.sanidadeF;
-  var y = document.getElementById('valueF').value;
-  if(localStorage.sanidadeF === undefined){
-    localStorage.sanidadeF = '20'
-  }
-  else if (y === ''){
-    return 0;
-  }
-  else if(x != undefined){
-    a = document.getElementById('valueF').value;
-    y = parseInt(a)
-    z = parseInt(localStorage.sanidadeF)
-    localStorage.sanidadeF = z - y
-  }
-  document.getElementById('sanidadeF').value = localStorage.sanidadeF
-  document.getElementById('labelSF').innerHTML = `${localStorage.sanidadeF}/20`
-}
-
-const felicidadeF = () =>{
-  let x = localStorage.sanidadeF;
-  var y = document.getElementById('valueF').value;
-  if(localStorage.sanidadeF === undefined){
-    localStorage.sanidadeF = '20'
-  }
-  else if (y === ''){
-    return 0;
-  }
-  else if(x != undefined){
-    a = document.getElementById('valueF').value;
-    y = parseInt(a)
-    z = parseInt(localStorage.sanidadeF)
-    localStorage.sanidadeF = z + y
-  }
-  document.getElementById('sanidadeF').value = localStorage.sanidadeF
-  document.getElementById('labelSF').innerHTML = `${localStorage.sanidadeF}/20`
-}
-
-const danoM = () =>{
-  let x = localStorage.vidaM;
-  var y = document.getElementById('valueM').value;
-  if(localStorage.vidaM === undefined){
-    localStorage.vidaM = '46'
-  }
-  else if (y === ''){
-    return 0;
-  }
-
-  else if(x != undefined){
-    a = document.getElementById('valueM').value;
-    y = parseInt(a)
-    z = parseInt(localStorage.vidaM)
-    localStorage.vidaM = z - y
-  }
-  document.getElementById('vidaM').value = localStorage.vidaM
-  document.getElementById('labelVM').innerHTML = `${localStorage.vidaM}/46`
-}
-
-const healM = () =>{
-  let x = localStorage.vidaM;
-  var y = document.getElementById('valueM').value;
-  if(localStorage.vidaM === undefined){
-    localStorage.vidaM = '46'
-  }
-  else if (y === ''){
-    return 0;
-  }
-  else if(x != undefined){
-    a = document.getElementById('valueM').value;
-    y = parseInt(a)
-    z = parseInt(localStorage.vidaM)
-    localStorage.vidaM = z + y
-    document.getElementById('vidaM').value = localStorage.vidaM
-    document.getElementById('labelVM').innerHTML = `${localStorage.vidaM}/46`
-  }
-}
-
-const sanidadeM = () =>{
-  let x = localStorage.sanidadeM;
-  var y = document.getElementById('valueM').value;
-  if(localStorage.sanidadeM === undefined){
-    localStorage.sanidadeM = '20'
-  }
-  else if (y === ''){
-    return 0;
-  }
-  else if(x != undefined){
-    a = document.getElementById('valueM').value;
-    y = parseInt(a)
-    z = parseInt(localStorage.sanidadeM)
-    localStorage.sanidadeM = z - y
-  }
-  document.getElementById('sanidadeM').value = localStorage.sanidadeM
-  document.getElementById('labelSM').innerHTML = `${localStorage.sanidadeM}/20`
-}
-
-const felicidadeM = () =>{
-  let x = localStorage.sanidadeM;
-  var y = document.getElementById('valueM').value;
-  if(localStorage.sanidadeM === undefined){
-    localStorage.sanidadeM = '20'
-  }
-  else if (y === ''){
-    return 0;
-  }
-  else if(x != undefined){
-    a = document.getElementById('valueM').value;
-    y = parseInt(a)
-    z = parseInt(localStorage.sanidadeM)
-    localStorage.sanidadeM = z + y
-  }
-  document.getElementById('sanidadeM').value = localStorage.sanidadeM
-  document.getElementById('labelSM').innerHTML = `${localStorage.sanidadeM}/20`
-}
-
-const danoN = () =>{
-  let x = localStorage.vidaN;
-  var y = document.getElementById('valueN').value;
-  if(localStorage.vidaN === undefined){
-    localStorage.vidaN = '43'
-  }
-  else if (y === ''){
-    return 0;
-  }
-
-  else if(x != undefined){
-    a = document.getElementById('valueN').value;
-    y = parseInt(a)
-    z = parseInt(localStorage.vidaN)
-    localStorage.vidaN = z - y
-  }
-  document.getElementById('vidaN').value = localStorage.vidaN
-  document.getElementById('labelVN').innerHTML = `${localStorage.vidaN}/43`
-}
-
-const healN = () =>{
-  let x = localStorage.vidaN;
-  var y = document.getElementById('valueN').value;
-  if(localStorage.vidaN === undefined){
-    localStorage.vidaN = '43'
-  }
-  else if (y === ''){
-    return 0;
-  }
-  else if(x != undefined){
-    a = document.getElementById('valueN').value;
-    y = parseInt(a)
-    z = parseInt(localStorage.vidaN)
-    localStorage.vidaN = z + y
-    document.getElementById('vidaN').value = localStorage.vidaN
-    document.getElementById('labelVN').innerHTML = `${localStorage.vidaN}/43`
-  }
-}
-
-const sanidadeN = () =>{
-  let x = localStorage.sanidadeN;
-  var y = document.getElementById('valueN').value;
-  if(localStorage.sanidadeN === undefined){
-    localStorage.sanidadeN = '20'
-  }
-  else if (y === ''){
-    return 0;
-  }
-  else if(x != undefined){
-    a = document.getElementById('valueN').value;
-    y = parseInt(a)
-    z = parseInt(localStorage.sanidadeN)
-    localStorage.sanidadeN = z - y
-  }
-  document.getElementById('sanidadeN').value = localStorage.sanidadeN
-  document.getElementById('labelSN').innerHTML = `${localStorage.sanidadeN}/20`
-}
-
-const felicidadeN = () =>{
-  let x = localStorage.sanidadeN;
-  var y = document.getElementById('valueN').value;
-  if(localStorage.sanidadeN === undefined){
-    localStorage.sanidadeN = '20'
-  }
-  else if (y === ''){
-    return 0;
-  }
-  else if(x != undefined){
-    a = document.getElementById('valueN').value;
-    y = parseInt(a)
-    z = parseInt(localStorage.sanidadeN)
-    localStorage.sanidadeN = z + y
-  }
-  document.getElementById('sanidadeN').value = localStorage.sanidadeN
-  document.getElementById('labelSN').innerHTML = `${localStorage.sanidadeN}/20`
-}
-
-const danoZ = () =>{
-  let x = localStorage.vidaZ;
-  var y = document.getElementById('valueZ').value;
-  if(localStorage.vidaZ === undefined){
-    localStorage.vidaZ = '64'
-  }
-  else if (y === ''){
-    return 0;
-  }
-
-  else if(x != undefined){
-    a = document.getElementById('valueZ').value;
-    y = parseInt(a)
-    z = parseInt(localStorage.vidaZ)
-    localStorage.vidaZ = z - y
-  }
-  document.getElementById('vidaZ').value = localStorage.vidaZ
-  document.getElementById('labelVZ').innerHTML = `${localStorage.vidaZ}/64`
-}
-
-const healZ = () =>{
-  let x = localStorage.vidaZ;
-  var y = document.getElementById('valueZ').value;
-  if(localStorage.vidaZ === undefined){
-    localStorage.vidaZ = '64'
-  }
-  else if (y === ''){
-    return 0;
-  }
-  else if(x != undefined){
-    a = document.getElementById('valueZ').value;
-    y = parseInt(a)
-    z = parseInt(localStorage.vidaZ)
-    localStorage.vidaZ = z + y
-    document.getElementById('vidaZ').value = localStorage.vidaZ
-    document.getElementById('labelVZ').innerHTML = `${localStorage.vidaZ}/64`
-  }
-}
-
-const sanidadeZ = () =>{
-  let x = localStorage.sanidadeZ;
-  var y = document.getElementById('valueZ').value;
-  if(localStorage.sanidadeZ === undefined){
-    localStorage.sanidadeZ = '20'
-  }
-  else if (y === ''){
-    return 0;
-  }
-  else if(x != undefined){
-    a = document.getElementById('valueZ').value;
-    y = parseInt(a)
-    z = parseInt(localStorage.sanidadeZ)
-    localStorage.sanidadeZ = z - y
-  }
-  document.getElementById('sanidadeZ').value = localStorage.sanidadeZ
-  document.getElementById('labelSZ').innerHTML = `${localStorage.sanidadeZ}/20`
-}
-
-const felicidadeZ = () =>{
-  let x = localStorage.sanidadeZ;
-  var y = document.getElementById('valueZ').value;
-  if(localStorage.sanidadeZ === undefined){
-    localStorage.sanidadeZ = '20'
-  }
-  else if (y === ''){
-    return 0;
-  }
-  else if(x != undefined){
-    a = document.getElementById('valueZ').value;
-    y = parseInt(a)
-    z = parseInt(localStorage.sanidadeZ)
-    localStorage.sanidadeZ = z + y
-  }
-  document.getElementById('sanidadeZ').value = localStorage.sanidadeZ
-  document.getElementById('labelSZ').innerHTML = `${localStorage.sanidadeZ}/20`
-}
-  
-  </script>
+    <script src="main.js"></script>
   </body>
 </html>
