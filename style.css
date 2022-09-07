@@ -208,7 +208,10 @@ progress::-webkit-progress-bar {
   justify-content: space-between;
 }
 
-
+.photo{
+  width: 17.52rem;
+  height: 12rem;
+}
 
 .chose{
   display: none;
@@ -277,7 +280,7 @@ progress::-webkit-progress-bar {
 
 .options{
   background-image: linear-gradient(to right, rgba(255, 255, 255, 0.566), white);
-  font-size: 1.3rem;
+  font-size: 0.9rem;
   width: 50%;
   font-family: roboto;
   border:#1e112b;
