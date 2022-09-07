@@ -1,14 +1,19 @@
+body{
+  margin: 0;
+}
+
 .collapsible {
   background: linear-gradient(145deg, #e9e1e1, #c4bdbd);
   border-radius: 5rem;
   color: black;
   cursor: pointer;
   padding: 1rem;
-  width: 100%;
+  width: 99%;
   text-align: left;
   outline: none;
   font-size: 2rem;
   font-family: 'Bungee', cursive;
+  margin: 0.1rem;
 }
 
 main{
@@ -198,7 +203,88 @@ progress::-webkit-progress-bar {
   font-size: 20px;
 }
 
-.playerStats{
+.força, .destreza, .constituição, .carisma, .inteligência, .percepção{
   display: flex;
   justify-content: space-between;
+}
+
+
+
+.chose{
+  display: none;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align: center;
+  width: 150%;
+  height: 150%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  background-color: rgb(77, 20, 183);
+  border: hidden;
+  gap: 0.4rem;
+}
+
+.filter{
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 150%;
+  height: 150%;
+  background-color: rgb(0, 0, 0);
+  z-index: 2;
+}
+
+.results{
+  display: none;
+  flex-direction: column;
+  z-index: 3;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  width: 80%;
+  height: 40%;
+  border-radius: 1rem;
+}
+
+.soma{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Michroma;
+  height: 70%;
+  width: 100%;
+  text-align: center;
+  font-size: 3.5rem;
+}
+
+.lista{
+  font-family: Michroma;
+  font-size: 0.8rem;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+#lista{
+  padding-left: 1rem;
+}
+
+.options{
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.566), white);
+  font-size: 1.3rem;
+  width: 50%;
+  font-family: roboto;
+  border:#1e112b;
+  border-style:ridge;
+}
+
+#up{
+  font-size: 1rem;
+  color: blueviolet;
 }
