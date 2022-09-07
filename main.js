@@ -1,30 +1,182 @@
-var Dice20 = document.getElementById("d20");
-Dice20.addEventListener("keydown", function (e) {
-    if (e.code === "Enter") {  //checks whether the pressed key is "Enter"
-        dice20();
-    }
-});
+const stats = {
+	bartolomeu : {
+		name : 'Bartolomeu',
+		força : 4,
+		destreza : 4,
+		constituição : 2,
+		carisma : 1,
+		inteligência : -1,
+		percepção : 4,
+	},
+	ciara : {
+		name : 'Ciara',
+		força : 1,
+		destreza : 2,
+		constituição : 2,
+		carisma : 3,
+		inteligência : 4,
+		percepção : 3,
+	},
+	eris : {
+		name : 'Eris',
+		força : 4,
+		destreza : 4,
+		constituição : 2,
+		carisma : 1,
+		inteligência : 1,
+		percepção : 3,
+	},
+	feather : {
+		name : 'Feather',
+		força : 4,
+		destreza : 2,
+		constituição : 3,
+		carisma : -1,
+		inteligência : 4,
+		percepção : 3,
+	},
+	lilith : {
+		name : 'Lilith',
+		força : 1,
+		destreza : 2,
+		constituição : 3,
+		carisma : 4,
+		inteligência : 3,
+		percepção : 2,
+	},
+	mina : {
+		name : 'Mina',
+		força : 3,
+		destreza : 3,
+		constituição : 3,
+		carisma : 1,
+		inteligência : 2,
+		percepção : 3,
+	},
+	nixis : {
+		name : 'Níxis',
+		força : 3,
+		destreza : 3,
+		constituição : 3,
+		carisma : 3,
+		inteligência : 4,
+		percepção : 3,
+	},
+	zumbao : {
+		name : 'Zumbão',
+		força : 4,
+		destreza : 4,
+		constituição : 4,
+		carisma : 3,
+		inteligência : -1,
+		percepção : 1,
+	},
+}
 
-var Dice8 = document.getElementById("d8");
-Dice8.addEventListener("keydown", function (e) {
-    if (e.code === "Enter") {  //checks whether the pressed key is "Enter"
-        dice8();
-    }
-});
+const skill20 = (number, add) =>{
+	let dado = d20(number)
+	document.getElementById('soma').innerHTML = (dado[0] + add)
+	document.getElementById('lista').innerHTML = `${dado[1]} <sup id="up">+${add}</sup> `
+	openResultado()
+}
 
-var Dice6 = document.getElementById("d6");
-Dice6.addEventListener("keydown", function (e) {
-    if (e.code === "Enter") {  //checks whether the pressed key is "Enter"
-        dice6();
-    }
-});
+const skill8 = (number, add) =>{
+	let dado = d8(number)
+	document.getElementById('soma').innerHTML = (dado[0] + add)
+	document.getElementById('lista').innerHTML = `${dado[1]} <sup id="up">+${add}</sup> `
+	openResultado()
+}
 
-var Dice4 = document.getElementById("d4");
-Dice4.addEventListener("keydown", function (e) {
-    if (e.code === "Enter") {  //checks whether the pressed key is "Enter"
-        dice4();
-    }
-});
+const skill6 = (number, add) =>{
+	let dado = d6(number)
+	document.getElementById('soma').innerHTML = (dado[0] + add)
+	document.getElementById('lista').innerHTML = `${dado[1]} <sup id="up">+${add}</sup> `
+	openResultado()
+}
+
+const skill4 = (number, add) =>{
+	let dado = d4(number)
+	document.getElementById('soma').innerHTML = (dado[0] + add)
+	document.getElementById('lista').innerHTML = `${dado[1]} <sup id="up">+${add}</sup> `
+	openResultado()
+}
+
+function check(elem){
+	// X = Personagem
+	// y = Dado do persongaem
+	// Template = atalho pra ação
+	let x = (elem.parentNode.parentNode.id);
+	sessionStorage.character = x;
+	let toStringPersonagem = `${x}`
+	let y = (elem.classList)
+	let toStringStatus = `${y}`
+	sessionStorage.atributoMain = y;
+	let main = stats[toStringPersonagem][toStringStatus]
+	if(main == -1){
+		sessionStorage.main = 2
+		sessionStorage.negative = 'true'
+	}
+	else{
+		sessionStorage.main = stats[toStringPersonagem][toStringStatus] + 1
+		sessionStorage.negative = 'false'
+	}
+	openClose()
+}
+
+
+const check2 = (elem) =>{
+	let mainNumero =	d20(parseInt(sessionStorage.main))
+	let biggest = (mainNumero[1])
+	let lowest = (mainNumero)
+	let atributoSecundario = (elem.id)
+	let toStringStatus = `${atributoSecundario}`
+	sessionStorage.secundary = stats[sessionStorage.character][toStringStatus]
+	let secondNumero = parseInt(sessionStorage.secundary)
+	if(sessionStorage.negative == 'false'){
+		if(sessionStorage.atributoMain === atributoSecundario){
+			document.getElementById('soma').innerHTML = biggest[0]
+			document.getElementById('lista').innerHTML = mainNumero[1];
+		}
+		else{
+			document.getElementById('soma').innerHTML = `${biggest[0] + secondNumero}` ;
+			document.getElementById('lista').innerHTML = `${mainNumero[1]} <sup id="up">+${secondNumero}</sup>`;
+		}
+	}
+	else if(sessionStorage.negative == 'true'){
+		if(sessionStorage.atributoMain === atributoSecundario){
+			document.getElementById('soma').innerHTML = biggest[1]
+			document.getElementById('lista').innerHTML = mainNumero[1];
+		}
+		else if(sessionStorage.atributoMain != atributoSecundario){
+			document.getElementById('soma').innerHTML = `${biggest[1] + secondNumero}` ;
+			document.getElementById('lista').innerHTML = `${mainNumero[1]} <sup id="up">+${secondNumero}</sup>`;
+		}
+	}
+	openResultado()
+	openClose()
+}
+
+const closeResultado = () =>{
+	document.getElementById('results').style.display = 'none';
+	document.getElementById('filter').style.display = 'none';
+}
+
+const openResultado = () =>{
+	document.getElementById('results').style.display = 'flex';
+	document.getElementById('filter').style.display = 'flex';
+}
+
+
+const openClose = () => {
+	let x = document.getElementById('chose').style;
+	if(x.display == 'flex'){
+		x.display = 'none'
+	}
+	else{
+		x.display = 'flex'
+	}
+}
+
 
 var coll = document.getElementsByClassName("collapsible");
 var i;
@@ -43,25 +195,29 @@ for (i = 0; i < coll.length; i++) {
 
 const dice20 = () => {
   let x = parseInt(document.getElementById('d20').value)
-  d20(x)
+  skill20(x, 0)
+  openResultado()
   document.getElementById('d20').value = ''
 }
 
 const dice8 = () => {
   let x = parseInt(document.getElementById('d8').value)
-  d8(x)
+  skill8(x, 0)
+  openResultado()
   document.getElementById('d8').value = ''
 }
 
 const dice6 = () => {
   let x = parseInt(document.getElementById('d6').value)
-  d6(x)
+  skill6(x, 0)
+  openResultado()
   document.getElementById('d6').value = ''
 }
 
 const dice4 = () => {
   let x = parseInt(document.getElementById('d4').value)
-  d4(x)
+  skill4(x, 0)
+  openResultado()
   document.getElementById('d4').value = ''
 }
 
@@ -71,14 +227,9 @@ const d20 = number => {
     var r = Math.floor(Math.random() * 20) + 1
     arr.push(r)
   }
-  alert(
-    `----🎲  ${arr.reduce((a, b) => a + b, 0)}  🎲----\n\n ${arr.sort(function (
-      a,
-      b
-    ) {
-      return b - a
-    })}`
-  )
+	let soma = arr.reduce((a, b) => a + b, 0);
+	let ordem = arr.sort(function (a,b) {return b - a})
+	return [soma, ordem]
 }
 
 const d8 = number => {
@@ -87,14 +238,9 @@ const d8 = number => {
     var r = Math.floor(Math.random() * 8) + 1
     arr.push(r)
   }
-  alert(
-    `----🎲  ${arr.reduce((a, b) => a + b, 0)}  🎲----\n\n ${arr.sort(function (
-      a,
-      b
-    ) {
-      return b - a
-    })}`
-  )
+	let soma = arr.reduce((a, b) => a + b, 0);
+	let ordem = arr.sort(function (a,b) {return b - a})
+	return [soma, ordem]
 }
 
 const d6 = number => {
@@ -103,14 +249,9 @@ const d6 = number => {
     var r = Math.floor(Math.random() * 6) + 1
     arr.push(r)
   }
-  alert(
-    `----🎲  ${arr.reduce((a, b) => a + b, 0)}  🎲----\n\n ${arr.sort(function (
-      a,
-      b
-    ) {
-      return b - a
-    })}`
-  )
+	let soma = arr.reduce((a, b) => a + b, 0);
+	let ordem = arr.sort(function (a,b) {return b - a})
+	return [soma, ordem]
 }
 
 const d4 = number => {
@@ -119,14 +260,9 @@ const d4 = number => {
     var r = Math.floor(Math.random() * 4) + 1
     arr.push(r)
   }
-  alert(
-    `----🎲  ${arr.reduce((a, b) => a + b, 0)}  🎲----\n\n ${arr.sort(function (
-      a,
-      b
-    ) {
-      return b - a
-    })}`
-  )
+	let soma = arr.reduce((a, b) => a + b, 0);
+	let ordem = arr.sort(function (a,b) {return b - a})
+	return [soma, ordem]
 }
 
 function att1(){
