@@ -1,6 +1,7 @@
 const stats = {
 	bartolomeu : {
 		name : 'Bartolomeu',
+    foto : 'https://cdn.discordapp.com/attachments/831176302279000174/1017121614258778206/Bartolomeu.jpeg',
 		força : 4,
 		destreza : 4,
 		constituição : 2,
@@ -10,6 +11,7 @@ const stats = {
 	},
 	ciara : {
 		name : 'Ciara',
+    foto : 'https://cdn.discordapp.com/attachments/831176302279000174/1017121616146219030/Ciara.jpeg',
 		força : 1,
 		destreza : 2,
 		constituição : 2,
@@ -19,6 +21,7 @@ const stats = {
 	},
 	eris : {
 		name : 'Eris',
+    foto : 'https://cdn.discordapp.com/attachments/831176302279000174/1017121613994524713/Eris.jpeg',
 		força : 4,
 		destreza : 4,
 		constituição : 2,
@@ -28,6 +31,7 @@ const stats = {
 	},
 	feather : {
 		name : 'Feather',
+    foto : 'https://cdn.discordapp.com/attachments/831176302279000174/1017121614493651014/Feather.jpeg',
 		força : 4,
 		destreza : 2,
 		constituição : 3,
@@ -37,6 +41,7 @@ const stats = {
 	},
 	lilith : {
 		name : 'Lilith',
+    foto : 'https://cdn.discordapp.com/attachments/831176302279000174/1017121615911329863/Lilith.jpeg',
 		força : 1,
 		destreza : 2,
 		constituição : 3,
@@ -46,6 +51,7 @@ const stats = {
 	},
 	mina : {
 		name : 'Mina',
+    foto : 'https://cdn.discordapp.com/attachments/831176302279000174/1017121615529660476/Mina.jpeg',
 		força : 3,
 		destreza : 3,
 		constituição : 3,
@@ -55,6 +61,7 @@ const stats = {
 	},
 	nixis : {
 		name : 'Níxis',
+    foto : 'https://www.istoedinheiro.com.br/wp-content/uploads/sites/17/2022/02/tilapia-e1645622421681.jpg',
 		força : 3,
 		destreza : 3,
 		constituição : 3,
@@ -64,6 +71,7 @@ const stats = {
 	},
 	zumbao : {
 		name : 'Zumbão',
+    foto : 'https://cdn.discordapp.com/attachments/831176302279000174/1017121616452391013/Zumbao.jpeg',
 		força : 4,
 		destreza : 4,
 		constituição : 4,
@@ -112,6 +120,7 @@ function check(elem){
 	let toStringStatus = `${y}`
 	sessionStorage.atributoMain = y;
 	let main = stats[toStringPersonagem][toStringStatus]
+  let foto = stats[toStringPersonagem]['foto']
 	if(main == -1){
 		sessionStorage.main = 2
 		sessionStorage.negative = 'true'
@@ -120,6 +129,7 @@ function check(elem){
 		sessionStorage.main = stats[toStringPersonagem][toStringStatus] + 1
 		sessionStorage.negative = 'false'
 	}
+  document.getElementById('photo').innerHTML = `<img id class="photo" src="${foto}" alt=""></img>`;
 	openClose()
 }
 
