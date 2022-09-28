@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun&display=swap" rel="stylesheet">
+    <link
+      rel="shortcut icon"
+      href="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/344/external-rpg-gaming-ecommerce-flaticons-lineal-color-flat-icons-2.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="style.css">
+    <title>R P G</title>
+  </head>
+  <body>
+    <main>
+      <div class="filter" id="filter" onclick="closeResultado()"></div>
+      <div class="results" id="results" onclick="closeResultado()">
+        <div class="soma"><h1 id="soma"></h1></div>
+        <div class="lista"><h1 id="lista"></h1></div>
+      </div>
+      <div class="chose" id="chose">
+        <div id="photo"><img id class="photo" src="" alt=""></div>
+        <div class="options" id="força" onclick="check2(this)"><h2>Força </h2></div>
+        <div class="options" id="destreza" onclick="check2(this)"><h2>Destreza</h2></div>
+        <div class="options" id="constituição" onclick="check2(this)"><h2>Constituição</h2></div>
+        <div class="options" id="carisma" onclick="check2(this)"><h2>Carisma</h2></div>
+        <div class="options" id="inteligência" onclick="check2(this)"><h2>Inteligência</h2></div>
+        <div class="options" id="percepção" onclick="check2(this)"><h2>Percepção</h2></div>
+      </div>
+
+      <div class="header">Personagens </div>
+      <button class="collapsible">Bartolomeu</button>
+      <!-- BARTOLOMEU -->
+      <div class="content">
+        <div class="slot">
+          <!-- BARTOLOMEU -->
+          <div class="infos" id="bartolomeu">
+            <div class="stats">
+              <div class="força" onclick="check(this)">
+                <h2>Força:</h2>
+                <h2>4</h2>
+              </div>
+              <div class="destreza" onclick="check(this)">
+                <h2>Destreza:</h2>
+                <h2>4</h2>
+              </div>
+              <div class="constituição" onclick="check(this)">
+                <h2>Constituição:</h2>
+                <h2>2</h2>
+              </div>
+              <div class="carisma" onclick="check(this)">
+                <h2>Carisma:</h2>
+                <h2>1</h2>
+              </div>
+              <div class="inteligência" onclick="check(this)">
+                <h2>Inteligência:</h2>
+                <h2>-1</h2>
+              </div>
+              <div class="percepção" onclick="check(this)">
+                <h2>Percepção:</h2>
+                <h2>4</h2>
+              </div>
+            </div>
+            <div class="step">‎</div>
+            <div class="vida">
+              <div class="a">
+                <label for="vidaB" class="b">Vida:</label>
+                <progress
+                  id="vidaB"
+                  class="vida"
+                  value="50"
+                  max="50"
+                ></progress>
+                <label for="vidaB" id="labelVB">50/50</label>
+              </div>
+
+              <span>‎</span>
+
+              <div class="a">
+                <label for="sanidadeB" class="b">Sanidade:</label>
+                <progress
+                  id="sanidadeB"
+                  class="sanidade"
+                  value="20"
+                  max="20"
+                ></progress>
+                <label for="sanidadeB" id="labelSB">20/20</label>
+              </div>
+
+              <span>‎</span>
+
+              <div class="button">
+                <input type="number" class="input" id="valueB" /> <br />
+                <button class="danoB" onclick="danoB()">🩸</button>
+                <button class="curaB" onclick="healB()">💊</button>
+                <button class="sanidadeB" onclick="sanidadeB()">💀</button>
+                <button class="sanidadeB" onclick="felicidadeB()">😁</button>
+              </div>
+            </div>
+            <div class="step">‎</div>
+            <div class="skill">
+              <h2 onclick="skill6(5 , 1)">Ataque Básico:</h2>
+              <p onclick="skill6(5 , 1)">5 D6 +1</p>
+              <h2>Passiva:</h2>
+              <p>Rastrear alvo pelo cheiro🍺</p>
+              <h2>Mordida:</h2>
+              <p class="attack" onclick="skill6(5, 0)">
+                Moidida <br /><span>5 D6</span>
+              </p>
+              <h4 onclick="skill4(1, 2)">Sangramento: 1 D4 +2</h4>
+              <h2>Garra:</h2>
+              <p class="attack" onclick="skill6(5, 1)">
+                Garrada alvo único <br />
+                <span>5 D6 +1</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="collapsible">Ciara</button>
+      <div class="content">
+        <!-- CIARA -->
+        <div class="slot">
+          <div class="infos" id="ciara">
+            <div class="stats">
+              <div class="força" onclick="check(this)">
+                <h2>Força:</h2>
+                <h2>1</h2>
+              </div>
+              <div class="destreza" onclick="check(this)">
+                <h2>Destreza:</h2>
+                <h2>2</h2>
+              </div>
+              <div class="constituição" onclick="check(this)">
+                <h2>Constituição:</h2>
+                <h2>2</h2>
+              </div>
+              <div class="carisma" onclick="check(this)">
+                <h2>Carisma:</h2>
+                <h2>3</h2>
+              </div>
+              <div class="inteligência" onclick="check(this)">
+                <h2>Inteligência:</h2>
+                <h2>4</h2>
+              </div>
+              <div class="percepção" onclick="check(this)">
+                <h2>Percepção:</h2>
+                <h2>3</h2>
+              </div>
+            </div>
+            <div class="step">‎</div>
+            <div class="vida">
+              <div class="a">
+                <label for="vidaC" class="b">Vida:</label>
+                <progress
+                  id="vidaC"
+                  class="vida"
+                  value="33"
+                  max="33"
+                ></progress>
+                <label for="vidaC" id="labelVC">33/33</label>
+              </div>
+
+              <span>‎</span>
+
+              <div class="a">
+                <label for="sanidadeC" class="b">Sanidade:</label>
+                <progress
+                  id="sanidadeC"
+                  class="sanidade"
+                  value="20"
+                  max="20"
+                ></progress>
+                <label for="sanidadeC" id="labelSC">20/20</label>
+              </div>
+
+              <span>‎</span>
+
+              <div class="button">
+                <input type="number" class="input" id="valueC" /> <br />
+                <button class="danoB" onclick="danoC()">🩸</button>
+                <button class="curaB" onclick="healC()">💊</button>
+                <button class="sanidadeB" onclick="sanidadeC()">💀</button>
+                <button class="sanidadeB" onclick="felicidadeC()">😁</button>
+              </div>
+            </div>
+            <div class="step">‎</div>
+            <div class="skill">
+              <h2 onclick="skill6(1,0)">Ataque Básico:</h2>
+              <p onclick="skill6(1,0)">1 D6</p>
+              <h2>Passiva:</h2>
+              <p>Tatuagem armazena poder após abates 4 Cargas = +1 dado</p>
+              <h2 onclick="skill6(5,0)">Cura:</h2>
+              <p class="attack" onclick="skill6(5,0)">
+                Curinha alvo único🪄 <br /><span>5 D6 (Inteligência)</span>
+              </p>
+              <h2 onclick="skill6(5,0)">Purificação:</h2>
+              <p class="attack" onclick="skill6(5,0)">
+                Tira debuff e da dano em mortos vivos <br />
+                <span>5 D6 (Inteligência)</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="collapsible">Eris</button>
+      <div class="content">
+        <!-- ERIS -->
+        <div class="slot">
+          <div class="infos" id="eris">
+            <div class="stats">
+              <div class="força" onclick="check(this)">
+                <h2>Força:</h2>
+                <h2>4</h2>
+              </div>
+              <div class="destreza" onclick="check(this)">
+                <h2>Destreza:</h2>
+                <h2>4</h2>
+              </div>
+              <div class="constituição" onclick="check(this)">
+                <h2>Constituição:</h2>
+                <h2>2</h2>
+              </div>
+              <div class="carisma" onclick="check(this)">
+                <h2>Carisma:</h2>
+                <h2>1</h2>
+              </div>
+              <div class="inteligência" onclick="check(this)">
+                <h2>Inteligência:</h2>
+                <h2>1</h2>
+              </div>
+              <div class="percepção" onclick="check(this)">
+                <h2>Percepção:</h2>
+                <h2>3</h2>
+              </div>
+            </div>
+            <div class="step">‎</div>
+            <div class="vida">
+              <div class="a">
+                <label for="vidaE" class="b">Vida:</label>
+                <progress
+                  id="vidaE"
+                  class="vida"
+                  value="46"
+                  max="46"
+                ></progress>
+                <label for="vidaE" id="labelVE">46/46</label>
+              </div>
+
+              <span>‎</span>
+
+              <div class="a">
+                <label for="sanidadeE" class="b">Sanidade:</label>
+                <progress
+                  id="sanidadeE"
+                  class="sanidade"
+                  value="20"
+                  max="20"
+                ></progress>
+                <label for="sanidadeE" id="labelSE">20/20</label>
+              </div>
+
+              <span>‎</span>
+
+              <div class="button">
+                <input type="number" class="input" id="valueE" /> <br />
+                <button class="danoB" onclick="danoE()">🩸</button>
+                <button class="curaB" onclick="healE()">💊</button>
+                <button class="sanidadeB" onclick="sanidadeE()">💀</button>
+                <button class="sanidadeB" onclick="felicidadeE()">😁</button>
+              </div>
+            </div>
+            <div class="step">‎</div>
+            <div class="skill">
+              <h2 onclick="skill6(5, 2)">Ataque Básico:</h2>
+              <p onclick="skill6(5, 2)">5 D6 +2</p>
+              <h2>Olhar do desespero:</h2>
+              <p>Dt: 15</p>
+              <h2>Teletransporte das Sombras:</h2>
+              <p class="attack">Teletransporta né</p>
+              <h2 >Elementarista:</h2>
+              <p class="attack">Buffa a arma 🗡️</p>
+              <h3>Elementos:</h3>
+              <p>
+                <span onclick="skill4(1,0)"> Fogo: 1d4 de queimadura </span>
+                Raio: +3 em reação <br />
+                Gelo: congela <br />
+                <span onclick="skill6(1,0)">Ácido: 1 D6 </span>
+                Vento: alcance 2m
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="collapsible">Feather</button>
+      <div class="content">
+        <!-- FEATHER -->
+        <div class="slot">
+          <div class="infos" id="feather">
+            <div class="stats">
+              <div class="força" onclick="check(this)">
+                <h2>Força:</h2>
+                <h2>4</h2>
+              </div>
+              <div class="destreza" onclick="check(this)">
+                <h2>Destreza:</h2>
+                <h2>2</h2>
+              </div>
+              <div class="constituição" onclick="check(this)">
+                <h2>Constituição:</h2>
+                <h2>3</h2>
+              </div>
+              <div class="carisma" onclick="check(this)">
+                <h2>Carisma:</h2>
+                <h2>-1</h2>
+              </div>
+              <div class="inteligência" onclick="check(this)">
+                <h2>Inteligência:</h2>
+                <h2>4</h2>
+              </div>
+              <div class="percepção" onclick="check(this)">
+                <h2>Percepção:</h2>
+                <h2>3</h2>
+              </div>
+            </div>
+            <div class="step">‎</div>
+            <div class="vida">
+              <div class="a">
+                <label for="vidaF" class="b">Vida:</label>
+                <progress
+                  id="vidaF"
+                  class="vida"
+                  value="33"
+                  max="33"
+                ></progress>
+                <label for="vidaF" id="labelVF">33/33</label>
+              </div>
+
+              <span>‎</span>
+
+              <div class="a">
+                <label for="sanidadeF" class="b">Sanidade:</label>
+                <progress
+                  id="sanidadeF"
+                  class="sanidade"
+                  value="20"
+                  max="20"
+                ></progress>
+                <label for="sanidadeF" id="labelSF">20/20</label>
+              </div>
+
+              <span>‎</span>
+
+              <div class="button">
+                <input type="number" class="input" id="valueF" /> <br />
+                <button class="danoB" onclick="danoF()">🩸</button>
+                <button class="curaB" onclick="healF()">💊</button>
+                <button class="sanidadeB" onclick="sanidadeF()">💀</button>
+                <button class="sanidadeB" onclick="felicidadeF()">😁</button>
+              </div>
+            </div>
+            <div class="step">‎</div>
+            <div class="skill">
+              <h2 onclick="skill6(5, 2)">Ataque Básico:</h2>
+              <p onclick="skill6(5, 2)">5 D6 +2</p>
+              <h2>Passiva:</h2>
+              <p>
+                Ao tomar ataque letal vira um ovo e volta com constituição
+                <br />
+                <span>DT:20,18,16,14</span>
+              </p>
+              <h2 onclick="skill6(5, 2)"</h2>>Manipulação:</h2>
+              <p class="attack" onclick="skill6(5, 2)">
+                Manipula as penas🪶 <br /><span>5 D6 +2</span>
+              </p>
+              <h2 onclick="skill6(5, 1)">Cura penada:</h2>
+              <p class="attack" onclick="skill6(5, 1)">
+                Curinha <br />
+                <span>5 D6 +1</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="collapsible">Lilith</button>
+      <div class="content">
+        <!-- Lilith -->
+        <div class="slot">
+          <div class="infos" id="lilith">
+            <div class="stats">
+              <div class="força" onclick="check(this)"> 
+                <h2>Força:</h2>
+                <h2>1</h2>
+              </div>
+              <div class="destreza" onclick="check(this)">
+                <h2>Destreza:</h2>
+                <h2>2</h2>
+              </div>
+              <div class="constituição" onclick="check(this)">
+                <h2>Constituição:</h2>
+                <h2>3</h2>
+              </div>
+              <div class="carisma" onclick="check(this)">
+                <h2>Carisma:</h2>
+                <h2>4</h2>
+              </div>
+              <div class="inteligência" onclick="check(this)">
+                <h2>Inteligência:</h2>
+                <h2>3</h2>
+              </div>
+              <div class="percepção" onclick="check(this)">
+                <h2>Percepção:</h2>
+                <h2>2</h2>
+              </div>
+            </div>
+            <div class="step">‎</div>
+            <div class="vida">
+              <div class="a">
+                <label for="vidaL" class="b">Vida:</label>
+                <progress
+                  id="vidaL"
+                  class="vida"
+                  value="50"
+                  max="50"
+                ></progress>
+                <label for="vidaL" id="labelVL">50/50</label>
+              </div>
+
+              <span>‎</span>
+
+              <div class="a">
+                <label for="sanidadeL" class="b">Sanidade:</label>
+                <progress
+                  id="sanidadeL"
+                  class="sanidade"
+                  value="20"
+                  max="20"
+                ></progress>
+                <label for="sanidadeL" id="labelSL">20/20</label>
+              </div>
+
+              <span>‎</span>
+
+              <div class="button">
+                <input type="number" class="input" id="valueL" /> <br />
+                <button class="danoB" onclick="danoL()">🩸</button>
+                <button class="curaB" onclick="healL()">💊</button>
+                <button class="sanidadeB" onclick="sanidadeL()">💀</button>
+                <button class="sanidadeB" onclick="felicidadeL()">😁</button>
+              </div>
+            </div>
+            <div class="step">‎</div>
+            <div class="skill">
+              <h2 onclick="skill8(2, 2)">Ataque Básico:</h2>
+              <p onclick="skill8(2, 2)">2 D8 +2</p>
+              <h2>Passiva:</h2>
+              <p>Sedução por 2 rounds <br />carisma</p>
+              <h2 onclick="skill6(4,0)">Foguinho:</h2>
+              <p class="attack" onclick="skill6(4,0)">
+                Fogo🔥 <br /><span>4 D6</span>
+              </p>
+              <h2 onclick="skill8(4,0)">Sugadinha:</h2>
+              <p class="attack" onclick="skill8(4,0)">
+                Da uma mamada <br />
+                <span>4 D8 <br />fraqueza = 1 D4 +2</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="collapsible">Mina</button>
+      <div class="content">
+        <!-- MINA -->
+        <div class="slot" >
+          <div class="infos" id="mina">
+          <div class="stats" >
+            <div class="força" onclick="check(this)">
+              <h2>Força:</h2>
+              <h2>3</h2>
+            </div>
+            <div class="destreza" onclick="check(this)">
+              <h2>Destreza:</h2>
+              <h2>3</h2>
+            </div>
+            <div class="constituição" onclick="check(this)">
+              <h2>Constituição:</h2>
+              <h2>3</h2>
+            </div>
+            <div class="carisma" onclick="check(this)">
+              <h2>Carisma:</h2>
+              <h2>1</h2>
+            </div>
+            <div class="inteligência" onclick="check(this)">
+              <h2>Inteligência:</h2>
+              <h2>2</h2>
+            </div>
+            <div class="percepção" onclick="check(this)">
+              <h2>Percepção:</h2>
+              <h2>3</h2>
+            </div>
+          </div>
+          <div class="step">‎</div>
+          <div class="vida">
+            <div class="a">
+              <label for="vidaM" class="b">Vida:</label>
+              <progress id="vidaM" class="vida" value="46" max="46"></progress>
+              <label for="vidaM" id="labelVM">46/46</label>
+            </div>
+          </div>
+
+            <span>‎</span>
+
+            <div class="a">
+              <label for="sanidadeM" class="b">Sanidade:</label>
+              <progress
+                id="sanidadeM"
+                class="sanidade"
+                value="20"
+                max="20"
+              ></progress>
+              <label for="sanidadeM" id="labelSM">20/20</label>
+            </div>
+
+            <span>‎</span>
+
+            <div class="button">
+              <input type="number" class="input" id="valueM" /> <br />
+              <button class="danoB" onclick="danoM()">🩸</button>
+              <button class="curaB" onclick="healM()">💊</button>
+              <button class="sanidadeB" onclick="sanidadeM()">💀</button>
+              <button class="sanidadeB" onclick="felicidadeM()">😁</button>
+            </div>
+          </div>
+          <div class="step">‎</div>
+          <div class="skill">
+            <h2>Ataque Básico:</h2>
+            <p></p>
+            <h2>Passiva:</h2>
+            <p>
+              Transforma em morcego🦇<br />
+              +5m
+            </p>
+            <h2 onclick="skill6(4,0)">Mordida:</h2>
+            <p class="attack" onclick="skill6(4,0)">
+              Moide <br /><span>4 D6 (100% de cura)</span>
+            </p>
+            <h2>Brilho:</h2>
+            <p class="attack">
+              Emite forte luz <br />
+              <span>retira aggro por 1 round</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <button class="collapsible">Níxis</button>
+      <div class="content">
+        <!-- NíXIS -->
+        <div class="slot">
+          <div class="infos" id="nixis">
+            <div class="stats">
+              <div class="força" onclick="check(this)">
+                <h2>Força:</h2>
+                <h2>3</h2>
+              </div>
+              <div class="destreza" onclick="check(this)">
+                <h2>Destreza:</h2>
+                <h2>3</h2>
+              </div>
+              <div class="constituição" onclick="check(this)">
+                <h2>Constituição:</h2>
+                <h2>3</h2>
+              </div>
+              <div class="carisma" onclick="check(this)">
+                <h2>Carisma:</h2>
+                <h2>3</h2>
+              </div>
+              <div class="inteligência" onclick="check(this)">
+                <h2>Inteligência:</h2>
+                <h2>4</h2>
+              </div>
+              <div class="percepção" onclick="check(this)">
+                <h2>Percepção:</h2>
+                <h2>3</h2>
+              </div>
+            </div>
+            <div class="step">‎</div>
+            <div class="vida">
+              <div class="a">
+                <label for="vidaN" class="b">Vida:</label>
+                <progress
+                  id="vidaN"
+                  class="vida"
+                  value="43"
+                  max="43"
+                ></progress>
+                <label for="vidaN" id="labelVN">50/50</label>
+              </div>
+
+              <span>‎</span>
+
+              <div class="a">
+                <label for="sanidadeN" class="b">Sanidade:</label>
+                <progress
+                  id="sanidadeN"
+                  class="sanidade"
+                  value="20"
+                  max="20"
+                ></progress>
+                <label for="sanidadeN" id="labelSN">20/20</label>
+              </div>
+
+              <span>‎</span>
+
+              <div class="button">
+                <input type="number" class="input" id="valueN" /> <br />
+                <button class="danoB" onclick="danoN()">🩸</button>
+                <button class="curaB" onclick="healN()">💊</button>
+                <button class="sanidadeB" onclick="sanidadeN()">💀</button>
+                <button class="sanidadeB" onclick="felicidadeN()">😁</button>
+              </div>
+            </div>
+            <div class="step">‎</div>
+            <div class="skill">
+              <h2 onclick="skill6(1,0)">Ataque Básico:</h2>
+              <p onclick="skill6(1,0)">1 D6</p>
+              <h2>Passiva:</h2>
+              <p>Troca entre cauda e perna</p>
+              <h2 onclick="skill6(5,0)">Olha a onda:</h2>
+              <p class="attack" onclick="skill6(5,0)">
+                Onda de água🌊 <br /><span>5 D6</span>
+              </p>
+              <h2>Hipnose:</h2>
+              <p class="attack" >
+                Hipnotiza por 2 turnos <br />
+                <span>DT:13</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="collapsible">Zumbão</button>
+      <div class="content">
+        <!-- Zumbão -->
+        <div class="slot">
+          <div class="infos" id="zumbao">
+            <div class="stats">
+              <div class="força" onclick="check(this)">
+                <h2>Força:</h2>
+                <h2>4</h2>
+              </div>
+              <div class="destreza" onclick="check(this)">
+                <h2>Destreza:</h2>
+                <h2>4</h2>
+              </div>
+              <div class="constituição" onclick="check(this)">
+                <h2>Constituição:</h2>
+                <h2>4</h2>
+              </div>
+              <div class="carisma" onclick="check(this)">
+                <h2>Carisma:</h2>
+                <h2>3</h2>
+              </div>
+              <div class="inteligência" onclick="check(this)">
+                <h2>Inteligência:</h2>
+                <h2>-1</h2>
+              </div>
+              <div class="percepção" onclick="check(this)">
+                <h2>Percepção:</h2>
+                <h2>1</h2>
+              </div>
+            </div>
+            <div class="step">‎</div>
+            <div class="vida">
+              <div class="a">
+                <label for="vidaZ" class="b">Vida:</label>
+                <progress
+                  id="vidaZ"
+                  class="vida"
+                  value="64"
+                  max="64"
+                ></progress>
+                <label for="vidaZ" id="labelVZ">64/64</label>
+              </div>
+
+              <span>‎</span>
+
+              <div class="a">
+                <label for="sanidadeZ" class="b">Sanidade:</label>
+                <progress
+                  id="sanidadeZ"
+                  class="sanidade"
+                  value="20"
+                  max="20"
+                ></progress>
+                <label for="sanidadeZ" id="labelSZ">20/20</label>
+              </div>
+
+              <span>‎</span>
+
+              <div class="button">
+                <input type="number" class="input" id="valueZ" /> <br />
+                <button class="danoB" onclick="danoZ()">🩸</button>
+                <button class="curaB" onclick="healZ()">💊</button>
+                <button class="sanidadeB" onclick="sanidadeZ()">💀</button>
+                <button class="sanidadeB" onclick="felicidadeZ()">😁</button>
+              </div>
+            </div>
+            <div class="step">‎</div>
+            <div class="skill">
+              <h2 onclick="skill6(5,2)">Ataque Básico:</h2>
+              <p onclick="skill6(5,2)">5 D6 +2</p>
+              <h2>Passiva:</h2>
+              <p>Cura de machucado externo</p>
+              <h2 onclick="skill6(5,2)">Mordida:</h2>
+              <p class="attack" onclick="skill6(5,2)">
+                Moide <br /><span>5 D6 +2</span>
+              </p>
+              <h2 onclick="skill6(5,0)">Cura:</h2>
+              <p class="attack" onclick="skill6(5,0)">
+                Curinha <br />
+                <span>5 D6</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="header">Dados</div>
+      <div class="dices">
+        <!-- DADOS -->
+        <input
+          type="number"
+          id="d20"
+          class="dice"
+          placeholder="D20"
+          min="1"
+          max="20"
+        />
+        <button onclick="dice20()" onkeyup="dice20()">🎲</button>
+        <input
+          type="number"
+          id="d8"
+          class="dice"
+          placeholder="D8"
+          min="1"
+          max="20"
+        />
+        <button onclick="dice8()">🎲</button>
+        <input
+          type="number"
+          id="d6"
+          class="dice"
+          placeholder="D6"
+          min="1"
+          max="20"
+        />
+        <button onclick="dice6()">🎲</button>
+        <input
+          type="number"
+          id="d4"
+          class="dice"
+          placeholder="D4"
+          min="1"
+          max="20"
+        />
+        <button onclick="dice4()">🎲</button>
+      </div>
+    </main>
+    <script src="main.js"></script>
+  </body>
+</html>
